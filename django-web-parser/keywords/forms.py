@@ -9,7 +9,13 @@ class InputUrlForm(forms.Form):
         label="Podaj adres URL"
     )
 
+    ignore_script = forms.BooleanField(
+        label='Ignoruj wystąpienia w kodzie JavaScript',
+        required=False,
+        initial=True
+    )
+
     def __init__(self, *args, **kwargs):
         super(InputUrlForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.add_input(Submit('submit', 'Wyślij'))

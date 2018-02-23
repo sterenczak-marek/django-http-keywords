@@ -53,9 +53,7 @@ THIRD_PARTY_APPS = [
 
 # Apps specific for this project go here.
 LOCAL_APPS = [
-    # custom users app
-    # 'django-web-parser.users.apps.UsersConfig',
-    # Your stuff: custom apps go here
+    'django-web-parser.keywords',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

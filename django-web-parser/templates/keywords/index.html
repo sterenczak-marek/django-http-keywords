@@ -6,13 +6,19 @@
 
   {% crispy form %}
 
-  {% if result %}
+  {% if error %}
 
-    <dl class="dl-horizontal">
-      {% for keyword, occurencies in result.items %}
+    <div class="alert alert-danger">
+      {{ error }}
+    </div>
 
-        <dt>{{ keyword }}</dt>
-        <dd>{{ occurencies }}</dd>
+  {% else %}
+
+    <dl class="row">
+      {% for keyword, occurencies in result.occurrences.items %}
+
+        <dt class="col-sm-3">{{ keyword }}</dt>
+        <dd class="col-sm-9">{{ occurencies }}</dd>
 
       {% endfor %}
     </dl>
