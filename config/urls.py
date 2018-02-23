@@ -6,10 +6,7 @@ from django.views import defaults as default_views
 
 urlpatterns = [
 
-    # Django Admin, use {% url 'admin:index' %}
-    url(settings.ADMIN_URL, admin.site.urls),
     url(r'^$', include('django-web-parser.keywords.urls')),
-
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
