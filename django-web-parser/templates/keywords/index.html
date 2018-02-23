@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  {% crispy form %}
+
+  {% if result %}
+
+    <dl class="dl-horizontal">
+      {% for keyword, occurencies in result.items %}
+
+        <dt>{{ keyword }}</dt>
+        <dd>{{ occurencies }}</dd>
+
+      {% endfor %}
+    </dl>
+
+  {% endif %}
+
+{% endblock %}
